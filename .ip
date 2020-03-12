@@ -1,0 +1,60 @@
+#!/data/data/com.termux/files/usr/bin/python
+#Author Bishal Singh [Anon4You]
+import os
+import sys
+import random
+import time
+import argparse
+import requests, json
+from sys import argv
+red = '\033[31m'
+yellow = '\033[93m'
+lgreen = '\033[92m'
+clear = '\033[0m'
+bold = '\033[01m'
+cyan = '\033[96m'
+wt = '\033[37m'
+os.system("clear")
+os.system('toilet -f smmono12 --gay "IpLocate"')
+def runntxt(s):
+        for anon in s + '\n':
+                sys.stdout.write(anon)
+                sys.stdout.flush()
+                time.sleep(20./2100)
+runntxt('\033[33;1m'+"               A tool by"'\033[31;1m'+" ["'\033[37;1m'+"Anon"'\033[32;1m'+"4"'\033[37;1m'+"You"'\033[31;1m'+"]")
+print(" ")
+print('\033[36;1m'+"Author :"'\033[37;1m'+"Bishal Singh")
+print("\033[32;1m")
+print(" ")
+ip = input("Target Ip >  ")
+print(" ")
+time.sleep(2)
+api = "http://ip-api.com/json/"
+try:
+        data = requests.get(api+ip).json()
+        sys.stdout.flush()
+        a = lgreen+bold+"[$]"
+        b = wt+bold+"[$]"
+        print (b, "[ISP]:", data['isp'])
+        runntxt(red+"<---------------------------------------->"+red)
+        print (a, "[Organisation]:", data['org'])
+        runntxt(red+"<---------------------------------------->"+red)
+        print (b, "[City]:", data['city'])
+        runntxt(red+"<---------------------------------------->"+red)
+        print (a, "[Region]:", data['region'])
+        runntxt(red+"<---------------------------------------->"+red)
+        print (b, "[Longitude]:", data['lon'])
+        runntxt(red+"<---------------------------------------->"+red)
+        print (a, "[Latitude]:", data['lat'])
+        runntxt(red+"<---------------------------------------->"+red)
+        print (b, "[Time zone]:", data['timezone'])
+        runntxt(red+"<---------------------------------------->"+red)
+        print (a, "[Zip code]:", data['zip'])
+        print (" "+cyan)
+        runntxt("Thanks for using this tool !")
+except KeyboardInterrupt:
+        print ('Terminating, Bye'+lgreen)
+        sys.exit(0)
+except requests.exceptions.ConnectionError as e:
+        print (red+"[~]"+" check your internet connection!"+clear)
+sys.exit(1)
