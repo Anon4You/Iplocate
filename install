@@ -1,1 +1,1 @@
-pkg install python toilet figlet -y && chmod 777 * && mv .ip /data/data/com.termux/files/usr && mv iplocate /data/data/com.termux/files/usr/bin && cd && echo " " && echo && toilet -f term -F border --gay "  Tyep iplocate to run tool  " && cd && rm -rf Iplocate
+pkg install python toilet figlet -y && chmod 777 * && mv .ip /data/data/com.termux/files/usr && mv iplocate /data/data/com.termux/files/usr/bin && cd && echo " " && echo && clear && toilet -f term -F border --gay "  Tyep iplocate to run tool  " && cd && rm -rf Iplocate
